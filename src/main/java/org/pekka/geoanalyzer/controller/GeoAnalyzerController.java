@@ -2,7 +2,6 @@ package org.pekka.geoanalyzer.controller;
 
 import org.pekka.geoanalyzer.dto.GeoDataResponse;
 import org.pekka.geoanalyzer.exception.JobAlreadyStartedException;
-import org.pekka.geoanalyzer.exception.JobFailedException;
 import org.pekka.geoanalyzer.service.GeoAnalyzerService;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

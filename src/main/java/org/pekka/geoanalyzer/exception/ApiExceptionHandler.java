@@ -15,9 +15,4 @@ public class ApiExceptionHandler {
         return ResponseEntity.badRequest().body(e.getMessage());
     }
 
-    @ExceptionHandler(value = {JobFailedException.class})
-    public ResponseEntity<?> handleJobFailedException(JobFailedException e) {
-        LOGGER.error("API exception occurred", e);
-        return ResponseEntity.badRequest().body(e.getMessage());
-    }
 }
