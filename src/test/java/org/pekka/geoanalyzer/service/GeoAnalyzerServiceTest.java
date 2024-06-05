@@ -7,7 +7,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.pekka.geoanalyzer.dto.GeoData;
 import org.pekka.geoanalyzer.dto.GeoDataResponse;
 import org.pekka.geoanalyzer.dto.RestCountriesResponse;
 import org.pekka.geoanalyzer.mapper.RestCountriesResponseMapper;
@@ -30,9 +29,6 @@ class GeoAnalyzerServiceTest {
 
     @Mock
     private RestTemplate restTemplate;
-
-    @Mock
-    private RestCountriesResponseMapper restCountriesResponseMapper;
 
     @InjectMocks
     private GeoAnalyzerService geoAnalyzerService;
@@ -71,7 +67,7 @@ class GeoAnalyzerServiceTest {
     }
 
     @Test
-    public void should_get_valid_response_back_from_completable_future_and_map_it_to_a_GeoDataResponse_object() throws Exception {
+    public void should_get_valid_response_back_from_completable_future_and_map_it_to_a_GeoDataResponse_object() {
         //given
         //when
         when(restTemplate.getForObject(anyString(), eq(RestCountriesResponse.class)))

@@ -39,10 +39,8 @@ public class GeoAnalyzerService {
     @Async
     @Retryable(retryFor = {CompletionException.class, ConnectException.class, ResourceAccessException.class, SocketException.class}, maxAttempts = 3, backoff = @Backoff(delay = 1000))
     public CompletableFuture<Void> processGeoData() {
-        return CompletableFuture.runAsync(() -> {
-            futureResult = CompletableFuture
-                    .completedFuture(restTemplate.getForObject(restCountriesUrl, RestCountriesResponse.class));
-        });
+        return CompletableFuture.runAsync(() -> futureResult = CompletableFuture
+                .completedFuture(restTemplate.getForObject(restCountriesUrl, RestCountriesResponse.class)));
     }
 
     public GeoDataResponse getResult() {
