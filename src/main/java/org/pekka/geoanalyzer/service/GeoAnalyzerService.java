@@ -5,6 +5,7 @@ import org.pekka.geoanalyzer.dto.RestCountriesResponse;
 import org.pekka.geoanalyzer.dto.GeoDataResponse;
 import org.pekka.geoanalyzer.mapper.RestCountriesResponseMapper;
 import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.retry.annotation.Backoff;
 import org.springframework.retry.annotation.Retryable;
 import org.springframework.scheduling.annotation.Async;
@@ -27,6 +28,9 @@ public class GeoAnalyzerService {
     private final RestTemplate restTemplate;
     private CompletableFuture<RestCountriesResponse> futureResult;
 
+    @Value("${rest.countries.api.url}")
+    private String restCountriesUrl;
+
     @Autowired
     public GeoAnalyzerService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
@@ -36,7 +40,7 @@ public class GeoAnalyzerService {
     @Retryable(retryFor = {CompletionException.class, ConnectException.class, ResourceAccessException.class, SocketException.class}, maxAttempts = 3, backoff = @Backoff(delay = 1000))
     public void processGeoData() {
         futureResult = CompletableFuture
-                .completedFuture(restTemplate.getForObject("https://restcountries.com/v3.1/all?fields=population,name,region,borders,cca3", RestCountriesResponse.class));
+                .completedFuture(restTemplate.getForObject(restCountriesUrl, RestCountriesResponse.class));
     }
 
     public GeoDataResponse getResult() {
