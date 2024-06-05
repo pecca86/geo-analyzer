@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.io.IOException;
@@ -64,7 +63,6 @@ class GeoAnalyzerControllerTest {
     void should_return_processing_not_finished_response_when_no_result_yet() throws Exception {
         // given
         given(geoAnalyzerService.getResult()).willReturn(null);
-        GeoDataResponse response = new GeoDataResponse("Processing is not finished yet", null, null);
         // when
         // then
         mockMvc.perform(get("/api/v1/geoanalyzer/processed"))
@@ -76,9 +74,8 @@ class GeoAnalyzerControllerTest {
     void should_return_a_valid_geo_data_response_when_processing_is_finished() throws Exception {
         // given
         given(geoAnalyzerService.getResult()).willReturn(geoDataResponse);
-
-        String json = new ObjectMapper().writeValueAsString(geoDataResponse);
         // when
+        // then
         mockMvc.perform(get("/api/v1/geoanalyzer/processed"))
                .andExpect(status().isOk())
                .andExpect(content().json("{\"message\":\"Successfully processed the data.\"}"));

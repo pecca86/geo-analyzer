@@ -27,8 +27,8 @@ class RestCountriesResponseMapperTest {
         assertThat(expected).isNotNull();
         assertThat(expected.countryData()).isNotNull();
         assertThat(expected.countryData().size()).isEqualTo(1);
-        assertThat(expected.countryData().get(0).name()).isEqualTo("Country Name");
-        assertThat(expected.countryData().get(0).population()).isEqualTo(3000L);
+        assertThat(expected.countryData().getFirst().name()).isEqualTo("Country Name");
+        assertThat(expected.countryData().getFirst().population()).isEqualTo(3000L);
         assertThat(expected.countryWithMostNeighboursOfOtherRegion()).isEqualTo("Result Country");
     }
 }
