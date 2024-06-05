@@ -10,27 +10,30 @@ import org.pekka.geoanalyzer.dto.RestCountriesResponse;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-06-05T11:06:16+0200",
+    date = "2024-06-05T11:34:41+0200",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.2 (Oracle Corporation)"
 )
 public class GeoDataArrayMapperImpl implements GeoDataArrayMapper {
 
     @Override
-    public GeoDataResponse mapToGeoDataResponse(RestCountriesResponse restCountriesResponse) {
-        if ( restCountriesResponse == null ) {
+    public GeoDataResponse mapToGeoDataResponse(RestCountriesResponse restCountriesResponse, String resultCountry) {
+        if ( restCountriesResponse == null && resultCountry == null ) {
             return null;
         }
 
         List<GeoDataResponseItem> countryData = null;
-
         List<GeoDataResponseItem> list = restCountriesResponseToGeoDataResponseItemList( restCountriesResponse );
         if ( list != null ) {
             countryData = list;
         }
+        String countryWithMostNeighboursOfOtherRegion = null;
+        if ( resultCountry != null ) {
+            countryWithMostNeighboursOfOtherRegion = resultCountry;
+        }
 
         String message = "Successfully processed the data.";
 
-        GeoDataResponse geoDataResponse = new GeoDataResponse( message, countryData );
+        GeoDataResponse geoDataResponse = new GeoDataResponse( message, countryData, countryWithMostNeighboursOfOtherRegion );
 
         return geoDataResponse;
     }

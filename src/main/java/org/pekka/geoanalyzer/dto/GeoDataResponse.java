@@ -7,5 +7,5 @@ import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public record GeoDataResponse(String message, List<GeoDataResponseItem> countryData) {
+public record GeoDataResponse(String message, List<GeoDataResponseItem> countryData, String countryWithMostNeighboursOfOtherRegion) {
 }

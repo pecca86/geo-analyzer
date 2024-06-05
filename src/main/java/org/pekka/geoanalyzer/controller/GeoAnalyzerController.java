@@ -1,7 +1,10 @@
 package org.pekka.geoanalyzer.controller;
 
 import org.pekka.geoanalyzer.dto.GeoDataResponse;
+import org.pekka.geoanalyzer.exception.JobAlreadyStartedException;
+import org.pekka.geoanalyzer.exception.JobFailedException;
 import org.pekka.geoanalyzer.service.GeoAnalyzerService;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(path = "api/v1/geoanalyzer")
 public class GeoAnalyzerController {
 
+    private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(GeoAnalyzerController.class);
+
     private final GeoAnalyzerService geoAnalyzerService;
+    private boolean jobStarted = false;
+    private boolean jobFailed = false;
 
     @Autowired
     public GeoAnalyzerController(GeoAnalyzerService geoAnalyzerService) {
@@ -20,27 +27,30 @@ public class GeoAnalyzerController {
     }
 
     @GetMapping
-    public String initJob() {
-//        GeoData geoData = restTemplateBuilderConfig.restTemplate().getForObject("https://api.ipgeolocation.io/ipgeo?apiKey=API_KEY", GeoData.class);
-
-//        GeoData geoData = restTemplate.getForObject("https://restcountries.com/v3.1/region/europe?fields=borders,region,population,name", GeoData.class);
-//
-//        return Optional.ofNullable(geoData)
-//                       .map(GeoData::toString)
-//                       .orElse("No data found");
-
-        geoAnalyzerService.processGeoData();
-
-        return "Job started, you can check the result with api/v1/processed endpoint";
+    public ResponseEntity<String> initJob() {
+        if (jobStarted) {
+            LOGGER.error("Job already started");
+            throw new JobAlreadyStartedException("Job already started");
+        }
+        jobStarted = true;
+        geoAnalyzerService.processGeoData().exceptionally(e -> {
+            jobFailed = true;
+            LOGGER.error("Job failed: {}", e.getMessage());
+            throw new JobFailedException("Job failed: " + e.getMessage());
+        });
+        return ResponseEntity.status(200).body("Job started, you can check the result with api/v1/processed endpoint");
     }
 
     @GetMapping("/processed")
     public ResponseEntity<GeoDataResponse> getProccessedGeoData() {
-        GeoDataResponse response = geoAnalyzerService.getFutureResult();
-        if (response == null) {
-            return ResponseEntity.status(202).body(new GeoDataResponse("Processing is not finished yet", null));
+        GeoDataResponse response = geoAnalyzerService.getResult();
+        if (response == null && !jobFailed) {
+            return ResponseEntity.status(202).body(new GeoDataResponse("Processing is not finished yet", null, null));
+        } else if (response == null) {
+            return ResponseEntity.status(500).body(new GeoDataResponse("Processing failed", null, null));
         }
-         return ResponseEntity.status(200).body(geoAnalyzerService.getFutureResult());
+        jobStarted = false;
+        return ResponseEntity.status(200).body(geoAnalyzerService.getResult());
     }
 
 }

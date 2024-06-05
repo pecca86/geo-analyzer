@@ -1,8 +1,12 @@
 package org.pekka.geoanalyzer.service;
 
+import org.pekka.geoanalyzer.controller.GeoAnalyzerController;
+import org.pekka.geoanalyzer.dto.GeoData;
 import org.pekka.geoanalyzer.dto.RestCountriesResponse;
 import org.pekka.geoanalyzer.dto.GeoDataResponse;
+import org.pekka.geoanalyzer.exception.JobAlreadyStartedException;
 import org.pekka.geoanalyzer.mapper.GeoDataArrayMapper;
+import org.slf4j.Logger;
 import org.springframework.http.ResponseEntity;
 import org.springframework.retry.annotation.Backoff;
 import org.springframework.retry.annotation.Retryable;
@@ -14,11 +18,14 @@ import org.springframework.web.client.RestTemplate;
 
 import java.net.ConnectException;
 import java.net.SocketException;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
 
 @Service
 public class GeoAnalyzerService {
+
+    private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(GeoAnalyzerService.class);
 
     private final RestTemplate restTemplate;
     private CompletableFuture<RestCountriesResponse> futureResult;
@@ -29,36 +36,55 @@ public class GeoAnalyzerService {
     }
 
     @Async
-    @Retryable(retryFor = {ConnectException.class, ResourceAccessException.class, SocketException.class}, maxAttempts = 3, backoff = @Backoff(delay = 1000))
-    public void processGeoData() {
-        try {
+    @Retryable(retryFor = {CompletionException.class, ConnectException.class, ResourceAccessException.class, SocketException.class}, maxAttempts = 3, backoff = @Backoff(delay = 1000))
+    public CompletableFuture<Void> processGeoData() {
+        return CompletableFuture.runAsync(() -> {
             futureResult = CompletableFuture
-                .completedFuture(restTemplate.getForObject("https://restcountries.com/v3.1/all?fields=population,name,region,borders,cca3", RestCountriesResponse.class));
-        } catch (CompletionException e) {
-            System.out.println("Error occurred while processing the data");
-        }
+                    .completedFuture(restTemplate.getForObject("https://restcountries.com/v3.1/all?fields=population,name,region,borders,cca3", RestCountriesResponse.class));
+        });
     }
 
-    public GeoDataResponse getFutureResult() {
-        if (futureResult == null) {
+    public GeoDataResponse getResult() {
+        if (futureResult == null || !futureResult.isDone()) {
             return null;
-            // throw JobNotFinishedException
-        } else if (!futureResult.isDone()) {
-            return null;
-            // throw JobNotFinishedException
         } else {
             try {
-                GeoDataResponse response = GeoDataArrayMapper.INSTANCE.mapToGeoDataResponse(futureResult.join());
+                RestCountriesResponse futureResponse = futureResult.join();
+                String resultCountry = calculateCountryWithMostNonSameRegionNeighbours(futureResponse);
+                GeoDataResponse response = GeoDataArrayMapper.INSTANCE.mapToGeoDataResponse(futureResponse, resultCountry);
                 response.countryData().sort((a, b) -> (int) (b.population() - a.population()));
                 return response;
             } catch (Exception e) {
+                LOGGER.error("Error while processing geo data", e);
                 return null;
-                // throw DataProcessingException
             }
         }
     }
 
-    public ResponseEntity<RestCountriesResponse> getDto() {
-        return restTemplate.getForEntity("https://restcountries.com/v3.1/region/europe?fields=borders,region,population,name", RestCountriesResponse.class);
+    private String calculateCountryWithMostNonSameRegionNeighbours(RestCountriesResponse restCountriesResponse) {
+        List<String> asianCountryCodesList = restCountriesResponse.stream()
+                                                                  .filter(country -> country.region().equals("Asia"))
+                                                                  .map(GeoData::cca3)
+                                                                  .toList();
+        int currentMax = Integer.MIN_VALUE;
+        String currentCountry = "";
+
+        for (GeoData country : restCountriesResponse) {
+            if (!"Asia".equals(country.region())) {
+                continue;
+            }
+            List<String> neighbours = country.borders();
+            int otherRegionNeighbourCount = 0;
+            for (String neighbour : neighbours) {
+                if (!asianCountryCodesList.contains(neighbour)) {
+                    otherRegionNeighbourCount++;
+                }
+            }
+            if (otherRegionNeighbourCount > currentMax) {
+                currentMax = otherRegionNeighbourCount;
+                currentCountry = country.name().common();
+            }
+        }
+        return currentCountry;
     }
 }

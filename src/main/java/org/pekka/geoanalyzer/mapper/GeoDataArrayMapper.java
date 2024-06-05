@@ -16,7 +16,8 @@ public interface GeoDataArrayMapper {
     @Mapping(target = "countryData", source = "restCountriesResponse")
     @Mapping(target = "message", constant = "Successfully processed the data.")
     @Mapping(target = "countryData.name", source = "restCountriesResponse")
-    GeoDataResponse mapToGeoDataResponse(RestCountriesResponse restCountriesResponse);
+    @Mapping(target = "countryWithMostNeighboursOfOtherRegion", source = "resultCountry")
+    GeoDataResponse mapToGeoDataResponse(RestCountriesResponse restCountriesResponse, String resultCountry);
 
     default String mapToName(Name name) {
         return name.common();
