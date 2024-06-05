@@ -1,0 +1,7 @@
+package org.pekka.geoanalyzer.dto;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public record Name(String common) {
+}

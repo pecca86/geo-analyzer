@@ -1,0 +1,28 @@
+[
+  {
+    "name": {
+      "common": "Jersey",
+      "official": "Bailiwick of Jersey",
+      "nativeName": {
+        "eng": {
+          "official": "Bailiwick of Jersey",
+          "common": "Jersey"
+        },
+        "fra": {
+          "official": "Bailliage de Jersey",
+          "common": "Jersey"
+        },
+        "nrf": {
+          "official": "Bailliage dé Jèrri",
+          "common": "Jèrri"
+        }
+      }
+    },
+    "region": "Europe",
+    "borders": [],
+    "population": 100800,
+    "continents": [
+      "Europe"
+    ]
+  }
+]
