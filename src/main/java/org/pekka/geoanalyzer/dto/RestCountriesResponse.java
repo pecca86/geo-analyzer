@@ -7,5 +7,5 @@ import java.util.ArrayList;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class GeoDataArray extends ArrayList<GeoData> {
+public class RestCountriesResponse extends ArrayList<GeoData> {
 }

@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import org.pekka.geoanalyzer.dto.GeoDataArray;
+import org.pekka.geoanalyzer.dto.RestCountriesResponse;
 import org.pekka.geoanalyzer.service.GeoAnalyzerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -17,7 +17,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -32,21 +31,21 @@ class GeoAnalyzerControllerTest {
     @MockBean
     private GeoAnalyzerService geoAnalyzerService;
 
-    private GeoDataArray geoDataArray;
+    private RestCountriesResponse restCountriesResponse;
 
     @BeforeEach
     void setUp() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         String json = new String(Files.readAllBytes(Paths.get("src/test/java/org/pekka/geoanalyzer/testdata/response-europe.json")));
-        geoDataArray = objectMapper.readValue(json, GeoDataArray.class);
+        restCountriesResponse = objectMapper.readValue(json, RestCountriesResponse.class);
     }
 
     @Test
     void getDto() throws Exception {
-        Mockito.when(geoAnalyzerService.getDto()).thenReturn(ResponseEntity.ok(geoDataArray));
+        Mockito.when(geoAnalyzerService.getDto()).thenReturn(ResponseEntity.ok(restCountriesResponse));
 
         mockMvc.perform(get("/api/v1/geoanalyzer/processed2"))
                .andExpect(status().isOk())
-               .andExpect(content().json(new ObjectMapper().writeValueAsString(geoDataArray)));
+               .andExpect(content().json(new ObjectMapper().writeValueAsString(restCountriesResponse)));
     }
 }

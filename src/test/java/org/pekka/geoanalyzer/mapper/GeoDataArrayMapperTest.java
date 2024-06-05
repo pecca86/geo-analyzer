@@ -2,9 +2,9 @@ package org.pekka.geoanalyzer.mapper;
 
 import org.junit.jupiter.api.Test;
 import org.pekka.geoanalyzer.dto.GeoData;
-import org.pekka.geoanalyzer.dto.GeoDataArray;
 import org.pekka.geoanalyzer.dto.GeoDataResponse;
 import org.pekka.geoanalyzer.dto.Name;
+import org.pekka.geoanalyzer.dto.RestCountriesResponse;
 
 import java.util.List;
 
@@ -18,12 +18,12 @@ class GeoDataArrayMapperTest {
     @Test
     void should_map_geo_data_array_to_geo_data_response() {
         // given
-        GeoDataArray geoDataArray = new GeoDataArray();
+        RestCountriesResponse restCountriesResponse = new RestCountriesResponse();
         Name name = new Name("Country Name");
-        GeoData geoData = new GeoData(name,"Europe", List.of("FIN", "RUS", "SWE"), 3000L);
-        geoDataArray.add(geoData);
+        GeoData geoData = new GeoData(name,"Europe", List.of("FIN", "RUS", "SWE"), 3000L, "NOR");
+        restCountriesResponse.add(geoData);
 
-        GeoDataResponse expected = GeoDataArrayMapper.INSTANCE.mapToGeoDataResponse(geoDataArray);
+        GeoDataResponse expected = GeoDataArrayMapper.INSTANCE.mapToGeoDataResponse(restCountriesResponse);
 
         assertThat(expected).isNotNull();
         assertThat(expected.countryData()).isNotNull();

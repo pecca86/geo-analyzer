@@ -4,26 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.processing.Generated;
 import org.pekka.geoanalyzer.dto.GeoData;
-import org.pekka.geoanalyzer.dto.GeoDataArray;
 import org.pekka.geoanalyzer.dto.GeoDataResponse;
 import org.pekka.geoanalyzer.dto.GeoDataResponseItem;
+import org.pekka.geoanalyzer.dto.RestCountriesResponse;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-06-04T23:32:13+0200",
+    date = "2024-06-05T11:06:16+0200",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.2 (Oracle Corporation)"
 )
 public class GeoDataArrayMapperImpl implements GeoDataArrayMapper {
 
     @Override
-    public GeoDataResponse mapToGeoDataResponse(GeoDataArray geoDataArray) {
-        if ( geoDataArray == null ) {
+    public GeoDataResponse mapToGeoDataResponse(RestCountriesResponse restCountriesResponse) {
+        if ( restCountriesResponse == null ) {
             return null;
         }
 
         List<GeoDataResponseItem> countryData = null;
 
-        List<GeoDataResponseItem> list = geoDataArrayToGeoDataResponseItemList( geoDataArray );
+        List<GeoDataResponseItem> list = restCountriesResponseToGeoDataResponseItemList( restCountriesResponse );
         if ( list != null ) {
             countryData = list;
         }
@@ -55,13 +55,13 @@ public class GeoDataArrayMapperImpl implements GeoDataArrayMapper {
         return geoDataResponseItem;
     }
 
-    protected List<GeoDataResponseItem> geoDataArrayToGeoDataResponseItemList(GeoDataArray geoDataArray) {
-        if ( geoDataArray == null ) {
+    protected List<GeoDataResponseItem> restCountriesResponseToGeoDataResponseItemList(RestCountriesResponse restCountriesResponse) {
+        if ( restCountriesResponse == null ) {
             return null;
         }
 
-        List<GeoDataResponseItem> list = new ArrayList<GeoDataResponseItem>( geoDataArray.size() );
-        for ( GeoData geoData : geoDataArray ) {
+        List<GeoDataResponseItem> list = new ArrayList<GeoDataResponseItem>( restCountriesResponse.size() );
+        for ( GeoData geoData : restCountriesResponse ) {
             list.add( geoDataToGeoDataResponseItem( geoData ) );
         }
 

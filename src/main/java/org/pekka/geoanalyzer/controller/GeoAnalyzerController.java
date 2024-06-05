@@ -1,8 +1,5 @@
 package org.pekka.geoanalyzer.controller;
 
-import org.pekka.geoanalyzer.config.RestTemplateBuilderConfig;
-import org.pekka.geoanalyzer.dto.GeoData;
-import org.pekka.geoanalyzer.dto.GeoDataArray;
 import org.pekka.geoanalyzer.dto.GeoDataResponse;
 import org.pekka.geoanalyzer.service.GeoAnalyzerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,13 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.web.client.RestTemplate;
-
-import java.util.Map;
-import java.util.Optional;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 
 @RestController
 @RequestMapping(path = "api/v1/geoanalyzer")

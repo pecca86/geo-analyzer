@@ -1,6 +1,6 @@
 package org.pekka.geoanalyzer.service;
 
-import org.pekka.geoanalyzer.dto.GeoDataArray;
+import org.pekka.geoanalyzer.dto.RestCountriesResponse;
 import org.pekka.geoanalyzer.dto.GeoDataResponse;
 import org.pekka.geoanalyzer.mapper.GeoDataArrayMapper;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +21,7 @@ import java.util.concurrent.CompletionException;
 public class GeoAnalyzerService {
 
     private final RestTemplate restTemplate;
-    private CompletableFuture<GeoDataArray> futureResult;
+    private CompletableFuture<RestCountriesResponse> futureResult;
 
     @Autowired
     public GeoAnalyzerService(RestTemplate restTemplate) {
@@ -33,18 +33,13 @@ public class GeoAnalyzerService {
     public void processGeoData() {
         try {
             futureResult = CompletableFuture
-                .completedFuture(restTemplate.getForObject("https://restcountries.com/v3.1/all?fields=population,name,region,borders", GeoDataArray.class));
+                .completedFuture(restTemplate.getForObject("https://restcountries.com/v3.1/all?fields=population,name,region,borders,cca3", RestCountriesResponse.class));
         } catch (CompletionException e) {
             System.out.println("Error occurred while processing the data");
         }
     }
 
     public GeoDataResponse getFutureResult() {
-        // Check if any job is queued
-        // Only allow one job at a time
-        // Add check to see if job failed silently
-        // Add some Caching that expires after 1 day
-
         if (futureResult == null) {
             return null;
             // throw JobNotFinishedException
@@ -54,7 +49,6 @@ public class GeoAnalyzerService {
         } else {
             try {
                 GeoDataResponse response = GeoDataArrayMapper.INSTANCE.mapToGeoDataResponse(futureResult.join());
-                // order the ResponseItems by population
                 response.countryData().sort((a, b) -> (int) (b.population() - a.population()));
                 return response;
             } catch (Exception e) {
@@ -64,7 +58,7 @@ public class GeoAnalyzerService {
         }
     }
 
-    public ResponseEntity<GeoDataArray> getDto() {
-        return restTemplate.getForEntity("https://restcountries.com/v3.1/region/europe?fields=borders,region,population,name", GeoDataArray.class);
+    public ResponseEntity<RestCountriesResponse> getDto() {
+        return restTemplate.getForEntity("https://restcountries.com/v3.1/region/europe?fields=borders,region,population,name", RestCountriesResponse.class);
     }
 }
