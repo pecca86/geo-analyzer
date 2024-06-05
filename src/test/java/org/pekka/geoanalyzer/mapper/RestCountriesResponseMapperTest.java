@@ -9,9 +9,8 @@ import org.pekka.geoanalyzer.dto.RestCountriesResponse;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
-class GeoDataArrayMapperTest {
+class RestCountriesResponseMapperTest {
 
 
 
@@ -23,7 +22,7 @@ class GeoDataArrayMapperTest {
         GeoData geoData = new GeoData(name,"Europe", List.of("FIN", "RUS", "SWE"), 3000L, "NOR");
         restCountriesResponse.add(geoData);
 
-        GeoDataResponse expected = GeoDataArrayMapper.INSTANCE.mapToGeoDataResponse(restCountriesResponse, "Result Country");
+        GeoDataResponse expected = RestCountriesResponseMapper.INSTANCE.mapToGeoDataResponse(restCountriesResponse, "Result Country");
 
         assertThat(expected).isNotNull();
         assertThat(expected.countryData()).isNotNull();

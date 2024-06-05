@@ -19,7 +19,6 @@ public class GeoAnalyzerController {
 
     private final GeoAnalyzerService geoAnalyzerService;
     private boolean jobStarted = false;
-    private boolean jobFailed = false;
 
     @Autowired
     public GeoAnalyzerController(GeoAnalyzerService geoAnalyzerService) {
@@ -33,21 +32,15 @@ public class GeoAnalyzerController {
             throw new JobAlreadyStartedException("Job already started");
         }
         jobStarted = true;
-        geoAnalyzerService.processGeoData().exceptionally(e -> {
-            jobFailed = true;
-            LOGGER.error("Job failed: {}", e.getMessage());
-            throw new JobFailedException("Job failed: " + e.getMessage());
-        });
+        geoAnalyzerService.processGeoData();
         return ResponseEntity.status(200).body("Job started, you can check the result with api/v1/processed endpoint");
     }
 
     @GetMapping("/processed")
     public ResponseEntity<GeoDataResponse> getProccessedGeoData() {
         GeoDataResponse response = geoAnalyzerService.getResult();
-        if (response == null && !jobFailed) {
+        if (response == null) {
             return ResponseEntity.status(202).body(new GeoDataResponse("Processing is not finished yet", null, null));
-        } else if (response == null) {
-            return ResponseEntity.status(500).body(new GeoDataResponse("Processing failed", null, null));
         }
         jobStarted = false;
         return ResponseEntity.status(200).body(geoAnalyzerService.getResult());

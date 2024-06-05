@@ -9,9 +9,9 @@ import org.pekka.geoanalyzer.dto.GeoDataResponse;
 import org.pekka.geoanalyzer.dto.Name;
 
 @Mapper(nullValueCheckStrategy = NullValueCheckStrategy.ALWAYS)
-public interface GeoDataArrayMapper {
+public interface RestCountriesResponseMapper {
 
-    GeoDataArrayMapper INSTANCE = Mappers.getMapper(GeoDataArrayMapper.class);
+    RestCountriesResponseMapper INSTANCE = Mappers.getMapper(RestCountriesResponseMapper.class);
 
     @Mapping(target = "countryData", source = "restCountriesResponse")
     @Mapping(target = "message", constant = "Successfully processed the data.")

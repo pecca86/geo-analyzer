@@ -1,13 +1,10 @@
 package org.pekka.geoanalyzer.service;
 
-import org.pekka.geoanalyzer.controller.GeoAnalyzerController;
 import org.pekka.geoanalyzer.dto.GeoData;
 import org.pekka.geoanalyzer.dto.RestCountriesResponse;
 import org.pekka.geoanalyzer.dto.GeoDataResponse;
-import org.pekka.geoanalyzer.exception.JobAlreadyStartedException;
-import org.pekka.geoanalyzer.mapper.GeoDataArrayMapper;
+import org.pekka.geoanalyzer.mapper.RestCountriesResponseMapper;
 import org.slf4j.Logger;
-import org.springframework.http.ResponseEntity;
 import org.springframework.retry.annotation.Backoff;
 import org.springframework.retry.annotation.Retryable;
 import org.springframework.scheduling.annotation.Async;
@@ -37,11 +34,9 @@ public class GeoAnalyzerService {
 
     @Async
     @Retryable(retryFor = {CompletionException.class, ConnectException.class, ResourceAccessException.class, SocketException.class}, maxAttempts = 3, backoff = @Backoff(delay = 1000))
-    public CompletableFuture<Void> processGeoData() {
-        return CompletableFuture.runAsync(() -> {
-            futureResult = CompletableFuture
-                    .completedFuture(restTemplate.getForObject("https://restcountries.com/v3.1/all?fields=population,name,region,borders,cca3", RestCountriesResponse.class));
-        });
+    public void processGeoData() {
+        futureResult = CompletableFuture
+                .completedFuture(restTemplate.getForObject("https://restcountries.com/v3.1/all?fields=population,name,region,borders,cca3", RestCountriesResponse.class));
     }
 
     public GeoDataResponse getResult() {
@@ -51,7 +46,7 @@ public class GeoAnalyzerService {
             try {
                 RestCountriesResponse futureResponse = futureResult.join();
                 String resultCountry = calculateCountryWithMostNonSameRegionNeighbours(futureResponse);
-                GeoDataResponse response = GeoDataArrayMapper.INSTANCE.mapToGeoDataResponse(futureResponse, resultCountry);
+                GeoDataResponse response = RestCountriesResponseMapper.INSTANCE.mapToGeoDataResponse(futureResponse, resultCountry);
                 response.countryData().sort((a, b) -> (int) (b.population() - a.population()));
                 return response;
             } catch (Exception e) {

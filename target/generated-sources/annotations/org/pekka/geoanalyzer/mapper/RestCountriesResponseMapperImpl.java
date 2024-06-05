@@ -10,10 +10,10 @@ import org.pekka.geoanalyzer.dto.RestCountriesResponse;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-06-05T11:34:41+0200",
+    date = "2024-06-05T15:47:00+0200",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.2 (Oracle Corporation)"
 )
-public class GeoDataArrayMapperImpl implements GeoDataArrayMapper {
+public class RestCountriesResponseMapperImpl implements RestCountriesResponseMapper {
 
     @Override
     public GeoDataResponse mapToGeoDataResponse(RestCountriesResponse restCountriesResponse, String resultCountry) {
