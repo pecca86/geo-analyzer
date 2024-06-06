@@ -103,4 +103,56 @@ class GeoAnalyzerControllerTest {
 
     }
 
+    @Test
+    void should_reset_job_when_job_is_finished() {
+        // given
+        given(jobStateService.isJobSuccess()).willReturn(true);
+        // when
+        // then
+        RestAssuredMockMvc.given()
+                          .when()
+                          .get("/api/v1/geoanalyzer/resetJob")
+                          .then()
+                          .statusCode(200);
+    }
+
+    @Test
+    void should_reset_job_when_job_is_failed() {
+        // given
+        given(jobStateService.isJobFailed()).willReturn(true);
+        // when
+        // then
+        RestAssuredMockMvc.given()
+                          .when()
+                          .get("/api/v1/geoanalyzer/resetJob")
+                          .then()
+                          .statusCode(200);
+    }
+
+    @Test
+    void should_not_reset_job_when_job_is_not_started() {
+        // given
+        given(jobStateService.isJobStarted()).willReturn(false);
+        // when
+        // then
+        RestAssuredMockMvc.given()
+                          .when()
+                          .get("/api/v1/geoanalyzer/resetJob")
+                          .then()
+                          .statusCode(200);
+    }
+
+    @Test
+    void should_return_400_when_running_job_is_not_yet_finished() {
+        // given
+        given(jobStateService.isJobStarted()).willReturn(true);
+        // when
+        // then
+        RestAssuredMockMvc.given()
+                          .when()
+                          .get("/api/v1/geoanalyzer/resetJob")
+                          .then()
+                          .statusCode(400);
+    }
+
 }
