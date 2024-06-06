@@ -3,7 +3,6 @@ package org.pekka.geoanalyzer.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
 import org.pekka.geoanalyzer.dto.GeoDataResponse;
 import org.pekka.geoanalyzer.dto.RestCountriesResponse;
 import org.pekka.geoanalyzer.mapper.RestCountriesResponseMapper;
@@ -49,7 +48,7 @@ class GeoAnalyzerControllerTest {
     }
 
     @Test
-    void should_trigger_new_job_when_no_active_jobs() throws Exception {
+    void should_trigger_new_job_when_no_active_jobs() {
         // given
         given(jobStateService.isJobStarted()).willReturn(false);
         // when
@@ -75,7 +74,7 @@ class GeoAnalyzerControllerTest {
     }
 
     @Test
-    void should_return_processing_not_finished_response_when_no_result_yet() throws Exception {
+    void should_return_processing_not_finished_response_when_no_result_yet() {
         // given
         given(geoAnalyzerService.getResult()).willReturn(null);
         given(jobStateService.isJobStarted()).willReturn(true);
@@ -89,7 +88,7 @@ class GeoAnalyzerControllerTest {
     }
 
     @Test
-    void should_return_a_valid_geo_data_response_when_processing_is_finished() throws Exception {
+    void should_return_a_valid_geo_data_response_when_processing_is_finished() {
         // given
         given(geoAnalyzerService.getResult()).willReturn(geoDataResponse);
         given(jobStateService.isJobStarted()).willReturn(true);

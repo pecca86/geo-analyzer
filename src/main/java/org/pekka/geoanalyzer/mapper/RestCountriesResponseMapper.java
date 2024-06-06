@@ -2,7 +2,6 @@ package org.pekka.geoanalyzer.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.Named;
 import org.mapstruct.NullValueCheckStrategy;
 import org.mapstruct.factory.Mappers;
 import org.pekka.geoanalyzer.dto.RestCountriesResponse;
