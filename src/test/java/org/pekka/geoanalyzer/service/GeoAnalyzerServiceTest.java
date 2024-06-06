@@ -28,6 +28,8 @@ class GeoAnalyzerServiceTest {
 
     @Mock
     private RestTemplate restTemplate;
+    @Mock
+    private JobStateService jobStateService;
 
     @InjectMocks
     private GeoAnalyzerService geoAnalyzerService;
