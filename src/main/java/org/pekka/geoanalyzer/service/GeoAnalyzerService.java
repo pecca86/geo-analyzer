@@ -7,19 +7,13 @@ import org.pekka.geoanalyzer.dto.GeoDataResponse;
 import org.pekka.geoanalyzer.mapper.RestCountriesResponseMapper;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.retry.annotation.Backoff;
-import org.springframework.retry.annotation.Retryable;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestTemplate;
 
-import java.net.ConnectException;
-import java.net.SocketException;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CompletionException;
 import java.util.concurrent.TimeUnit;
 
 @Service
