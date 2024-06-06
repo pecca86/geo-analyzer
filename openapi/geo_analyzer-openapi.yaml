@@ -1,0 +1,62 @@
+openapi: "3.1.0"
+info:
+  title: "geo_analyzer API"
+  description: "geo_analyzer API"
+  version: "1.0.0"
+servers:
+  - url: "https://geo_analyzer"
+paths:
+  /api/v1/geoanalyzer:
+    get:
+      summary: "GET api/v1/geoanalyzer"
+      operationId: "initJob"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "string"
+  /api/v1/geoanalyzer/processed:
+    get:
+      summary: "GET api/v1/geoanalyzer/processed"
+      operationId: "getProccessedGeoData"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/GeoDataResponse"
+  /api/v1/geoanalyzer/resetJob:
+    get:
+      summary: "GET api/v1/geoanalyzer/resetJob"
+      operationId: "resetJob"
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                type: "string"
+components:
+  schemas:
+    GeoDataResponseItem:
+      type: "object"
+      properties:
+        name:
+          type: "string"
+        populationDensity:
+          type: "number"
+          format: "double"
+    GeoDataResponse:
+      type: "object"
+      properties:
+        message:
+          type: "string"
+        countryData:
+          type: "array"
+          items:
+            $ref: "#/components/schemas/GeoDataResponseItem"
+        countryWithMostNeighboursOfOtherRegion:
+          type: "string"
