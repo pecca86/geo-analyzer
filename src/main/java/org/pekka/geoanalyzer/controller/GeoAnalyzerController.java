@@ -53,8 +53,16 @@ public class GeoAnalyzerController {
             return ResponseEntity.status(202).body(new GeoDataResponse("Processing is not finished yet", null, null));
         }
 
-        jobStateService.resetJob();
+        jobStateService.jobFinished(true);
         return ResponseEntity.status(200).body(geoAnalyzerService.getResult());
     }
 
+    @GetMapping("/resetJob")
+    public ResponseEntity<String> resetJob() {
+        if (jobStateService.isJobSuccess() || jobStateService.isJobFailed() || !jobStateService.isJobStarted()) {
+            jobStateService.resetJob();
+            return ResponseEntity.status(200).body("Job reset");
+        }
+        return ResponseEntity.status(400).body("Wait for previous job to finish before resetting the job");
+    }
 }

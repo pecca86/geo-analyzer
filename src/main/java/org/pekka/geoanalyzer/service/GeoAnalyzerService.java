@@ -43,7 +43,6 @@ public class GeoAnalyzerService {
     }
 
     @Async
-    @Retryable(retryFor = {CompletionException.class, ConnectException.class, ResourceAccessException.class, SocketException.class}, maxAttempts = 3, backoff = @Backoff(delay = 1000))
     public CompletableFuture<Void> processGeoData() {
         return CompletableFuture.runAsync(() -> futureResult = CompletableFuture
                 .completedFuture(restTemplate.getForObject(restCountriesUrl, RestCountriesResponse.class)))
@@ -66,7 +65,6 @@ public class GeoAnalyzerService {
                 String resultCountry = calculateCountryWithMostNonSameRegionNeighbours(futureResponse);
                 GeoDataResponse response = RestCountriesResponseMapper.INSTANCE.mapToGeoDataResponse(futureResponse, resultCountry);
                 calculatePopulationDensity(futureResponse, response);
-//                response.getCountryData().sort((a, b) -> (int) (b.getPopulationDensity() - a.getPopulationDensity()));
                 response.getCountryData().sort((a, b) -> Double.compare(b.getPopulationDensity(), a.getPopulationDensity()));
                 return response;
             } catch (Exception e) {

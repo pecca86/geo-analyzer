@@ -7,6 +7,7 @@ public class JobStateService {
 
     private boolean jobStarted;
     private boolean jobFailed;
+    private boolean jobSuccess;
 
     public boolean isJobStarted() {
         return jobStarted;
@@ -27,5 +28,13 @@ public class JobStateService {
     public void resetJob() {
         this.jobStarted = false;
         this.jobFailed = false;
+    }
+
+    public boolean isJobSuccess() {
+        return jobSuccess;
+    }
+
+    public void jobFinished(boolean jobSuccess) {
+        this.jobSuccess = jobSuccess;
     }
 }
