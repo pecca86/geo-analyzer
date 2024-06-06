@@ -62,3 +62,5 @@ replay_pid*
 /.idea/sonarlint/issuestore/3/7/3740d16a5d824842c35767845bb3eef9d625ae54
 /.idea/sonarlint/securityhotspotstore/3/7/3740d16a5d824842c35767845bb3eef9d625ae54
 /.idea/*
+/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+/target/*

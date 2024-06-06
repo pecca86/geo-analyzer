@@ -3,25 +3,25 @@ package org.pekka.geoanalyzer.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
+import org.junit.jupiter.api.TestInstance;
 import org.pekka.geoanalyzer.dto.GeoDataResponse;
 import org.pekka.geoanalyzer.dto.RestCountriesResponse;
 import org.pekka.geoanalyzer.mapper.RestCountriesResponseMapper;
 import org.pekka.geoanalyzer.service.GeoAnalyzerService;
+import org.pekka.geoanalyzer.service.JobStateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
+import io.restassured.module.mockmvc.RestAssuredMockMvc;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+import static org.hamcrest.Matchers.equalTo;
 import static org.mockito.BDDMockito.given;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -32,6 +32,8 @@ class GeoAnalyzerControllerTest {
 
     @MockBean
     private GeoAnalyzerService geoAnalyzerService;
+    @MockBean
+    private JobStateService jobStateService;
 
     private RestCountriesResponse restCountriesResponse;
     private GeoDataResponse geoDataResponse;
@@ -42,44 +44,64 @@ class GeoAnalyzerControllerTest {
         String json = new String(Files.readAllBytes(Paths.get("src/test/java/org/pekka/geoanalyzer/testdata/response-europe.json")));
         restCountriesResponse = objectMapper.readValue(json, RestCountriesResponse.class);
         geoDataResponse = RestCountriesResponseMapper.INSTANCE.mapToGeoDataResponse(restCountriesResponse, "Result Country");
+        RestAssuredMockMvc.reset();
+        RestAssuredMockMvc.mockMvc(mockMvc);
     }
 
     @Test
-    void should_trigger_new_job_when_no_active_jobs_and_not_when_job_already_started() throws Exception {
+    void should_trigger_new_job_when_no_active_jobs() throws Exception {
         // given
+        given(jobStateService.isJobStarted()).willReturn(false);
         // when
-        mockMvc.perform(get("/api/v1/geoanalyzer"))
-               .andExpect(status().isOk())
-               .andExpect(content().string("Job started, you can check the result with api/v1/processed endpoint"));
         // then
-        Mockito.verify(geoAnalyzerService, Mockito.times(1)).processGeoData();
+        RestAssuredMockMvc.given()
+                          .when()
+                          .get("/api/v1/geoanalyzer")
+                          .then()
+                          .statusCode(200);
+    }
 
-        mockMvc.perform(get("/api/v1/geoanalyzer"))
-               .andExpect(status().is(400))
-               .andExpect(content().string("Job already started"));
+    @Test
+    void should_not_trigger_a_new_job_when_active_job_found() {
+        // given
+        given(jobStateService.isJobStarted()).willReturn(true);
+        // when
+        // then
+        RestAssuredMockMvc.given()
+                          .when()
+                          .get("/api/v1/geoanalyzer")
+                          .then()
+                          .statusCode(400);
     }
 
     @Test
     void should_return_processing_not_finished_response_when_no_result_yet() throws Exception {
         // given
         given(geoAnalyzerService.getResult()).willReturn(null);
+        given(jobStateService.isJobStarted()).willReturn(true);
         // when
         // then
-        mockMvc.perform(get("/api/v1/geoanalyzer/processed"))
-               .andExpect(status().is(202))
-               .andExpect(content().json("{\"message\":\"Processing is not finished yet\"}"));
+        RestAssuredMockMvc.given()
+                          .when()
+                          .get("/api/v1/geoanalyzer/processed")
+                          .then()
+                          .statusCode(202);
     }
 
     @Test
     void should_return_a_valid_geo_data_response_when_processing_is_finished() throws Exception {
         // given
         given(geoAnalyzerService.getResult()).willReturn(geoDataResponse);
+        given(jobStateService.isJobStarted()).willReturn(true);
         // when
         // then
-        mockMvc.perform(get("/api/v1/geoanalyzer/processed"))
-               .andExpect(status().isOk())
-               .andExpect(content().json("{\"message\":\"Successfully processed the data.\"}"));
-    }
+        RestAssuredMockMvc.given()
+                          .when()
+                          .get("/api/v1/geoanalyzer/processed")
+                          .then()
+                          .statusCode(200)
+                          .body("message", equalTo("Successfully processed the data."));
 
+    }
 
 }

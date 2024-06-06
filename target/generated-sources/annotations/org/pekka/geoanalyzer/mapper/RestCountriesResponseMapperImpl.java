@@ -10,7 +10,7 @@ import org.pekka.geoanalyzer.dto.RestCountriesResponse;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-06-05T15:47:00+0200",
+    date = "2024-06-05T22:25:42+0200",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 21.0.2 (Oracle Corporation)"
 )
 public class RestCountriesResponseMapperImpl implements RestCountriesResponseMapper {
@@ -21,19 +21,16 @@ public class RestCountriesResponseMapperImpl implements RestCountriesResponseMap
             return null;
         }
 
-        List<GeoDataResponseItem> countryData = null;
+        GeoDataResponse geoDataResponse = new GeoDataResponse();
+
         List<GeoDataResponseItem> list = restCountriesResponseToGeoDataResponseItemList( restCountriesResponse );
         if ( list != null ) {
-            countryData = list;
+            geoDataResponse.setCountryData( list );
         }
-        String countryWithMostNeighboursOfOtherRegion = null;
         if ( resultCountry != null ) {
-            countryWithMostNeighboursOfOtherRegion = resultCountry;
+            geoDataResponse.setCountryWithMostNeighboursOfOtherRegion( resultCountry );
         }
-
-        String message = "Successfully processed the data.";
-
-        GeoDataResponse geoDataResponse = new GeoDataResponse( message, countryData, countryWithMostNeighboursOfOtherRegion );
+        geoDataResponse.setMessage( "Successfully processed the data." );
 
         return geoDataResponse;
     }
@@ -44,16 +41,14 @@ public class RestCountriesResponseMapperImpl implements RestCountriesResponseMap
         }
 
         String name = null;
-        Long population = null;
 
         if ( geoData.name() != null ) {
             name = mapToName( geoData.name() );
         }
-        if ( geoData.population() != null ) {
-            population = geoData.population();
-        }
 
-        GeoDataResponseItem geoDataResponseItem = new GeoDataResponseItem( name, population );
+        double populationDensity = 0.0d;
+
+        GeoDataResponseItem geoDataResponseItem = new GeoDataResponseItem( name, populationDensity );
 
         return geoDataResponseItem;
     }

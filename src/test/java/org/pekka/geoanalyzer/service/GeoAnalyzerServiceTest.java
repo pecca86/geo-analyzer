@@ -76,9 +76,9 @@ class GeoAnalyzerServiceTest {
         GeoDataResponse result = geoAnalyzerService.getResult();
         //then
         assertNotNull(result);
-        assertEquals(250, result.countryData().size());
-        assertEquals("China", result.countryData().getFirst().name());
-        assertEquals("Turkey", result.countryWithMostNeighboursOfOtherRegion());
+        assertEquals(250, result.getCountryData().size());
+        assertEquals("Macau", result.getCountryData().getFirst().getName());
+        assertEquals("Turkey", result.getCountryWithMostNeighboursOfOtherRegion());
     }
 
     @Test

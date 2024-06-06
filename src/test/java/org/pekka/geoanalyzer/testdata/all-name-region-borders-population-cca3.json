@@ -18,6 +18,7 @@
       "ZMB",
       "NAM"
     ],
+    "area": 1246700.0,
     "population": 32866268
   },
   {
@@ -38,6 +39,7 @@
     "cca3": "KIR",
     "region": "Oceania",
     "borders": [],
+    "area": 811.0,
     "population": 119446
   },
   {
@@ -62,6 +64,7 @@
     "cca3": "GGY",
     "region": "Europe",
     "borders": [],
+    "area": 78.0,
     "population": 62999
   },
   {
@@ -78,6 +81,7 @@
     "cca3": "GLP",
     "region": "Americas",
     "borders": [],
+    "area": 1628.0,
     "population": 400132
   },
   {
@@ -102,6 +106,7 @@
     "cca3": "COM",
     "region": "Africa",
     "borders": [],
+    "area": 1862.0,
     "population": 869595
   },
   {
@@ -118,6 +123,7 @@
     "cca3": "TCA",
     "region": "Americas",
     "borders": [],
+    "area": 948.0,
     "population": 38718
   },
   {
@@ -134,6 +140,7 @@
     "cca3": "CYM",
     "region": "Americas",
     "borders": [],
+    "area": 264.0,
     "population": 65720
   },
   {
@@ -160,6 +167,7 @@
       "PSE",
       "SYR"
     ],
+    "area": 20770.0,
     "population": 9216900
   },
   {
@@ -182,6 +190,7 @@
       "MLI",
       "MRT"
     ],
+    "area": 196722.0,
     "population": 16743930
   },
   {
@@ -205,6 +214,7 @@
       "SDN",
       "UGA"
     ],
+    "area": 619745.0,
     "population": 11193729
   },
   {
@@ -221,6 +231,7 @@
     "cca3": "ALA",
     "region": "Europe",
     "borders": [],
+    "area": 1580.0,
     "population": 29458
   },
   {
@@ -245,6 +256,7 @@
     "cca3": "NZL",
     "region": "Oceania",
     "borders": [],
+    "area": 270467.0,
     "population": 5084300
   },
   {
@@ -265,6 +277,7 @@
       "EGY",
       "JOR"
     ],
+    "area": 6220.0,
     "population": 4803269
   },
   {
@@ -285,6 +298,7 @@
       "CIV",
       "SLE"
     ],
+    "area": 111369.0,
     "population": 5057677
   },
   {
@@ -301,6 +315,7 @@
     "cca3": "SLB",
     "region": "Oceania",
     "borders": [],
+    "area": 28896.0,
     "population": 686878
   },
   {
@@ -322,6 +337,7 @@
       "ITA",
       "HUN"
     ],
+    "area": 20273.0,
     "population": 2100126
   },
   {
@@ -346,6 +362,7 @@
     "cca3": "TKL",
     "region": "Oceania",
     "borders": [],
+    "area": 12.0,
     "population": 1411
   },
   {
@@ -372,6 +389,7 @@
       "TJK",
       "TKM"
     ],
+    "area": 447400.0,
     "population": 34232050
   },
   {
@@ -449,6 +467,7 @@
       "ZAF",
       "ZMB"
     ],
+    "area": 390757.0,
     "population": 14862927
   },
   {
@@ -469,6 +488,7 @@
       "BFA",
       "GHA"
     ],
+    "area": 56785.0,
     "population": 8278737
   },
   {
@@ -496,6 +516,7 @@
       "SSD",
       "SDN"
     ],
+    "area": 622984.0,
     "population": 4829764
   },
   {
@@ -515,6 +536,7 @@
       "OMN",
       "SAU"
     ],
+    "area": 83600.0,
     "population": 9890400
   },
   {
@@ -540,6 +562,7 @@
       "TZA",
       "ZWE"
     ],
+    "area": 752612.0,
     "population": 18383956
   },
   {
@@ -560,6 +583,7 @@
       "THA",
       "VNM"
     ],
+    "area": 181035.0,
     "population": 16718971
   },
   {
@@ -580,6 +604,7 @@
       "CHN",
       "LAO"
     ],
+    "area": 331212.0,
     "population": 97338583
   },
   {
@@ -596,6 +621,7 @@
     "cca3": "PCN",
     "region": "Oceania",
     "borders": [],
+    "area": 47.0,
     "population": 56
   },
   {
@@ -612,6 +638,7 @@
     "cca3": "ATF",
     "region": "Antarctic",
     "borders": [],
+    "area": 7747.0,
     "population": 400
   },
   {
@@ -628,6 +655,7 @@
     "cca3": "PYF",
     "region": "Oceania",
     "borders": [],
+    "area": 4167.0,
     "population": 280904
   },
   {
@@ -691,6 +719,7 @@
       "SWZ",
       "ZWE"
     ],
+    "area": 1221037.0,
     "population": 59308690
   },
   {
@@ -707,6 +736,7 @@
     "cca3": "REU",
     "region": "Africa",
     "borders": [],
+    "area": 2511.0,
     "population": 840974
   },
   {
@@ -723,6 +753,7 @@
     "cca3": "AUS",
     "region": "Oceania",
     "borders": [],
+    "area": 7692024.0,
     "population": 25687041
   },
   {
@@ -747,6 +778,7 @@
       "SWE",
       "RUS"
     ],
+    "area": 338424.0,
     "population": 5530719
   },
   {
@@ -767,6 +799,7 @@
       "SUR",
       "VEN"
     ],
+    "area": 214969.0,
     "population": 786559
   },
   {
@@ -790,6 +823,7 @@
       "ZMB",
       "ZWE"
     ],
+    "area": 801590.0,
     "population": 31255435
   },
   {
@@ -815,6 +849,7 @@
       "KAZ",
       "UZB"
     ],
+    "area": 488100.0,
     "population": 6031187
   },
   {
@@ -837,6 +872,7 @@
       "THA",
       "VNM"
     ],
+    "area": 236800.0,
     "population": 7275556
   },
   {
@@ -861,6 +897,7 @@
       "SVN",
       "UKR"
     ],
+    "area": 93028.0,
     "population": 9749763
   },
   {
@@ -877,6 +914,7 @@
     "cca3": "VGB",
     "region": "Americas",
     "borders": [],
+    "area": 151.0,
     "population": 30237
   },
   {
@@ -907,6 +945,7 @@
       "COD",
       "GAB"
     ],
+    "area": 342000.0,
     "population": 5657000
   },
   {
@@ -933,6 +972,7 @@
       "PRY",
       "URY"
     ],
+    "area": 2780400.0,
     "population": 45376763
   },
   {
@@ -953,6 +993,7 @@
     "cca3": "MLT",
     "region": "Europe",
     "borders": [],
+    "area": 316.0,
     "population": 525285
   },
   {
@@ -978,6 +1019,7 @@
       "IRQ",
       "SYR"
     ],
+    "area": 783562.0,
     "population": 84339067
   },
   {
@@ -1000,6 +1042,7 @@
     "borders": [
       "DOM"
     ],
+    "area": 27750.0,
     "population": 11402533
   },
   {
@@ -1027,6 +1070,7 @@
       "CMR",
       "GAB"
     ],
+    "area": 28051.0,
     "population": 1402985
   },
   {
@@ -1048,6 +1092,7 @@
       "TUR",
       "MKD"
     ],
+    "area": 131990.0,
     "population": 10715549
   },
   {
@@ -1069,6 +1114,7 @@
       "POL",
       "RUS"
     ],
+    "area": 65300.0,
     "population": 2794700
   },
   {
@@ -1091,6 +1137,7 @@
       "LBN",
       "TUR"
     ],
+    "area": 185180.0,
     "population": 17500657
   },
   {
@@ -1107,6 +1154,7 @@
     "cca3": "HMD",
     "region": "Antarctic",
     "borders": [],
+    "area": 412.0,
     "population": 0
   },
   {
@@ -1125,6 +1173,7 @@
     "borders": [
       "ITA"
     ],
+    "area": 61.0,
     "population": 33938
   },
   {
@@ -1144,6 +1193,7 @@
       "FIN",
       "NOR"
     ],
+    "area": 450295.0,
     "population": 10353442
   },
   {
@@ -1171,6 +1221,7 @@
       "GTM",
       "MEX"
     ],
+    "area": 22966.0,
     "population": 397621
   },
   {
@@ -1187,6 +1238,7 @@
     "cca3": "UMI",
     "region": "Americas",
     "borders": [],
+    "area": 34.2,
     "population": 300
   },
   {
@@ -1207,6 +1259,7 @@
       "BOL",
       "PER"
     ],
+    "area": 756102.0,
     "population": 19116209
   },
   {
@@ -1232,6 +1285,7 @@
       "MNE",
       "ROU"
     ],
+    "area": 88361.0,
     "population": 6908224
   },
   {
@@ -1251,6 +1305,7 @@
       "CAN",
       "MEX"
     ],
+    "area": 9372610.0,
     "population": 329484123
   },
   {
@@ -1275,6 +1330,7 @@
       "MLI",
       "MAR"
     ],
+    "area": 2381741.0,
     "population": 44700000
   },
   {
@@ -1309,6 +1365,7 @@
       "PRY",
       "PER"
     ],
+    "area": 1098581.0,
     "population": 11673029
   },
   {
@@ -1333,6 +1390,7 @@
     "cca3": "JEY",
     "region": "Europe",
     "borders": [],
+    "area": 116.0,
     "population": 100800
   },
   {
@@ -1353,6 +1411,7 @@
     "cca3": "COK",
     "region": "Oceania",
     "borders": [],
+    "area": 236.0,
     "population": 18100
   },
   {
@@ -1377,6 +1436,7 @@
     "cca3": "VUT",
     "region": "Oceania",
     "borders": [],
+    "area": 12189.0,
     "population": 307150
   },
   {
@@ -1430,6 +1490,7 @@
       "ZAF",
       "ZMB"
     ],
+    "area": 825615.0,
     "population": 2540916
   },
   {
@@ -1449,6 +1510,7 @@
       "GTM",
       "HND"
     ],
+    "area": 21041.0,
     "population": 6486201
   },
   {
@@ -1468,6 +1530,7 @@
       "OMN",
       "SAU"
     ],
+    "area": 527968.0,
     "population": 29825968
   },
   {
@@ -1490,6 +1553,7 @@
     "borders": [
       "CHN"
     ],
+    "area": 30.0,
     "population": 649342
   },
   {
@@ -1514,6 +1578,7 @@
     "cca3": "MUS",
     "region": "Africa",
     "borders": [],
+    "area": 2040.0,
     "population": 1265740
   },
   {
@@ -1534,6 +1599,7 @@
     "cca3": "ABW",
     "region": "Americas",
     "borders": [],
+    "area": 180.0,
     "population": 106766
   },
   {
@@ -1554,6 +1620,7 @@
     "cca3": "PRI",
     "region": "Americas",
     "borders": [],
+    "area": 8870.0,
     "population": 3194034
   },
   {
@@ -1579,6 +1646,7 @@
       "TJK",
       "UZB"
     ],
+    "area": 199951.0,
     "population": 6591600
   },
   {
@@ -1600,6 +1668,7 @@
       "HND",
       "MEX"
     ],
+    "area": 108889.0,
     "population": 16858333
   },
   {
@@ -1616,6 +1685,7 @@
     "cca3": "NCL",
     "region": "Oceania",
     "borders": [],
+    "area": 18575.0,
     "population": 271960
   },
   {
@@ -1636,6 +1706,7 @@
     "cca3": "TON",
     "region": "Oceania",
     "borders": [],
+    "area": 747.0,
     "population": 105697
   },
   {
@@ -1659,6 +1730,7 @@
       "SEN",
       "SLE"
     ],
+    "area": 245857.0,
     "population": 13132792
   },
   {
@@ -1670,6 +1742,7 @@
     "cca3": "ATA",
     "region": "Antarctic",
     "borders": [],
+    "area": 1.4E7,
     "population": 1000
   },
   {
@@ -1686,6 +1759,7 @@
     "cca3": "TTO",
     "region": "Americas",
     "borders": [],
+    "area": 5130.0,
     "population": 1399491
   },
   {
@@ -1706,6 +1780,7 @@
     "cca3": "JAM",
     "region": "Americas",
     "borders": [],
+    "area": 10991.0,
     "population": 2961161
   },
   {
@@ -1722,6 +1797,7 @@
     "cca3": "BHS",
     "region": "Americas",
     "borders": [],
+    "area": 13943.0,
     "population": 393248
   },
   {
@@ -1753,6 +1829,7 @@
       "POL",
       "UKR"
     ],
+    "area": 1.7098242E7,
     "population": 144104080
   },
   {
@@ -1775,6 +1852,7 @@
     "borders": [
       "ZAF"
     ],
+    "area": 30355.0,
     "population": 2142252
   },
   {
@@ -1797,6 +1875,7 @@
       "LAO",
       "THA"
     ],
+    "area": 676578.0,
     "population": 54409794
   },
   {
@@ -1816,6 +1895,7 @@
       "CHN",
       "IND"
     ],
+    "area": 38394.0,
     "population": 771612
   },
   {
@@ -1837,6 +1917,7 @@
       "SEN",
       "ESH"
     ],
+    "area": 1030700.0,
     "population": 4649660
   },
   {
@@ -1870,6 +1951,7 @@
       "TJK",
       "VNM"
     ],
+    "area": 9706961.0,
     "population": 1402112000
   },
   {
@@ -1894,6 +1976,7 @@
       "BOL",
       "BRA"
     ],
+    "area": 406752.0,
     "population": 7132530
   },
   {
@@ -1910,6 +1993,7 @@
     "cca3": "GRL",
     "region": "Americas",
     "borders": [],
+    "area": 2166086.0,
     "population": 56367
   },
   {
@@ -1930,6 +2014,7 @@
     "cca3": "FRO",
     "region": "Europe",
     "borders": [],
+    "area": 1393.0,
     "population": 48865
   },
   {
@@ -1946,6 +2031,7 @@
     "cca3": "SJM",
     "region": "Europe",
     "borders": [],
+    "area": 61399.0,
     "population": 2562
   },
   {
@@ -1966,6 +2052,7 @@
       "CIV",
       "TGO"
     ],
+    "area": 238533.0,
     "population": 31072945
   },
   {
@@ -1990,6 +2077,7 @@
       "TZA",
       "ZMB"
     ],
+    "area": 118484.0,
     "population": 19129955
   },
   {
@@ -2016,6 +2104,7 @@
     "borders": [
       "IDN"
     ],
+    "area": 462840.0,
     "population": 8947027
   },
   {
@@ -2041,6 +2130,7 @@
       "ESP",
       "CHE"
     ],
+    "area": 551695.0,
     "population": 67391582
   },
   {
@@ -2064,6 +2154,7 @@
       "MOZ",
       "ZAF"
     ],
+    "area": 17364.0,
     "population": 1160164
   },
   {
@@ -2086,6 +2177,7 @@
       "SAU",
       "SYR"
     ],
+    "area": 89342.0,
     "population": 10203140
   },
   {
@@ -2108,6 +2200,7 @@
     "borders": [
       "USA"
     ],
+    "area": 9984670.0,
     "population": 38005238
   },
   {
@@ -2124,6 +2217,7 @@
     "cca3": "SHN",
     "region": "Africa",
     "borders": [],
+    "area": 394.0,
     "population": 53192
   },
   {
@@ -2148,6 +2242,7 @@
       "ESH",
       "ESP"
     ],
+    "area": 446550.0,
     "population": 36910558
   },
   {
@@ -2167,6 +2262,7 @@
       "CHN",
       "RUS"
     ],
+    "area": 1564110.0,
     "population": 3278292
   },
   {
@@ -2187,6 +2283,7 @@
     "cca3": "NRU",
     "region": "Oceania",
     "borders": [],
+    "area": 21.0,
     "population": 10834
   },
   {
@@ -2203,6 +2300,7 @@
     "cca3": "ISL",
     "region": "Europe",
     "borders": [],
+    "area": 103000.0,
     "population": 366425
   },
   {
@@ -2231,6 +2329,7 @@
       "FRA",
       "DEU"
     ],
+    "area": 2586.0,
     "population": 632275
   },
   {
@@ -2252,6 +2351,7 @@
       "LAO",
       "MYS"
     ],
+    "area": 513120.0,
     "population": 69799978
   },
   {
@@ -2271,6 +2371,7 @@
       "FRA",
       "ESP"
     ],
+    "area": 468.0,
     "population": 77265
   },
   {
@@ -2293,6 +2394,7 @@
       "SRB",
       "TUR"
     ],
+    "area": 110879.0,
     "population": 6927288
   },
   {
@@ -2312,6 +2414,7 @@
       "CRI",
       "HND"
     ],
+    "area": 130373.0,
     "population": 6624554
   },
   {
@@ -2335,6 +2438,7 @@
       "CHE",
       "VAT"
     ],
+    "area": 301336.0,
     "population": 59554023
   },
   {
@@ -2351,6 +2455,7 @@
     "cca3": "BLM",
     "region": "Americas",
     "borders": [],
+    "area": 21.0,
     "population": 4255
   },
   {
@@ -2371,6 +2476,7 @@
     "cca3": "ASM",
     "region": "Oceania",
     "borders": [],
+    "area": 199.0,
     "population": 55197
   },
   {
@@ -2393,6 +2499,7 @@
       "LBR",
       "MLI"
     ],
+    "area": 322463.0,
     "population": 26378275
   },
   {
@@ -2413,6 +2520,7 @@
     "cca3": "PLW",
     "region": "Oceania",
     "borders": [],
+    "area": 459.0,
     "population": 18092
   },
   {
@@ -2437,6 +2545,7 @@
     "cca3": "GUM",
     "region": "Oceania",
     "borders": [],
+    "area": 549.0,
     "population": 168783
   },
   {
@@ -2455,6 +2564,7 @@
     "borders": [
       "ESP"
     ],
+    "area": 6.0,
     "population": 33691
   },
   {
@@ -2471,6 +2581,7 @@
     "cca3": "AIA",
     "region": "Americas",
     "borders": [],
+    "area": 91.0,
     "population": 13452
   },
   {
@@ -2493,6 +2604,7 @@
       "PER",
       "VEN"
     ],
+    "area": 1141748.0,
     "population": 50882884
   },
   {
@@ -2520,6 +2632,7 @@
       "NGA",
       "SDN"
     ],
+    "area": 1284000.0,
     "population": 16425859
   },
   {
@@ -2547,6 +2660,7 @@
       "URY",
       "VEN"
     ],
+    "area": 8515767.0,
     "population": 212559409
   },
   {
@@ -2566,6 +2680,7 @@
       "CHN",
       "IND"
     ],
+    "area": 147181.0,
     "population": 29136808
   },
   {
@@ -2586,6 +2701,7 @@
     "cca3": "IMN",
     "region": "Europe",
     "borders": [],
+    "area": 572.0,
     "population": 85032
   },
   {
@@ -2605,6 +2721,7 @@
       "BRA",
       "SUR"
     ],
+    "area": 83534.0,
     "population": 254541
   },
   {
@@ -2621,6 +2738,7 @@
     "cca3": "VCT",
     "region": "Americas",
     "borders": [],
+    "area": 389.0,
     "population": 110947
   },
   {
@@ -2641,6 +2759,7 @@
       "KOR",
       "RUS"
     ],
+    "area": 120538.0,
     "population": 25778815
   },
   {
@@ -2667,6 +2786,7 @@
     "borders": [
       "MAF"
     ],
+    "area": 34.0,
     "population": 40812
   },
   {
@@ -2687,6 +2807,7 @@
       "GUF",
       "GUY"
     ],
+    "area": 163820.0,
     "population": 586634
   },
   {
@@ -2706,6 +2827,7 @@
       "IRQ",
       "SAU"
     ],
+    "area": 17818.0,
     "population": 4270563
   },
   {
@@ -2730,6 +2852,7 @@
       "ETH",
       "KEN"
     ],
+    "area": 637657.0,
     "population": 15893219
   },
   {
@@ -2750,6 +2873,7 @@
     "cca3": "TUV",
     "region": "Oceania",
     "borders": [],
+    "area": 26.0,
     "population": 11792
   },
   {
@@ -2770,6 +2894,7 @@
     "cca3": "BES",
     "region": "Americas",
     "borders": [],
+    "area": 328.0,
     "population": 25987
   },
   {
@@ -2812,6 +2937,7 @@
       "UGA",
       "ZMB"
     ],
+    "area": 2344858.0,
     "population": 108407721
   },
   {
@@ -2833,6 +2959,7 @@
       "MKD",
       "UNK"
     ],
+    "area": 28748.0,
     "population": 2837743
   },
   {
@@ -2853,6 +2980,7 @@
       "SLV",
       "NIC"
     ],
+    "area": 112492.0,
     "population": 9904608
   },
   {
@@ -2872,6 +3000,7 @@
       "COL",
       "PER"
     ],
+    "area": 276841.0,
     "population": 17643060
   },
   {
@@ -2900,6 +3029,7 @@
       "LBY",
       "SSD"
     ],
+    "area": 1886068.0,
     "population": 43849269
   },
   {
@@ -2916,6 +3046,7 @@
     "cca3": "FSM",
     "region": "Oceania",
     "borders": [],
+    "area": 702.0,
     "population": 115021
   },
   {
@@ -2938,6 +3069,7 @@
     "borders": [
       "CHN"
     ],
+    "area": 1104.0,
     "population": 7500700
   },
   {
@@ -2959,6 +3091,7 @@
       "NGA",
       "TGO"
     ],
+    "area": 112622.0,
     "population": 12123198
   },
   {
@@ -2987,6 +3120,7 @@
       "MRT",
       "MAR"
     ],
+    "area": 266000.0,
     "population": 510713
   },
   {
@@ -3009,6 +3143,7 @@
     "borders": [
       "IND"
     ],
+    "area": 65610.0,
     "population": 21919000
   },
   {
@@ -3028,6 +3163,7 @@
       "MMR",
       "IND"
     ],
+    "area": 147570.0,
     "population": 164689383
   },
   {
@@ -3048,6 +3184,7 @@
     "cca3": "MDG",
     "region": "Africa",
     "borders": [],
+    "area": 587041.0,
     "population": 27691019
   },
   {
@@ -3064,6 +3201,7 @@
     "cca3": "BHR",
     "region": "Asia",
     "borders": [],
+    "area": 765.0,
     "population": 1701583
   },
   {
@@ -3083,6 +3221,7 @@
       "AUT",
       "CHE"
     ],
+    "area": 160.0,
     "population": 38137
   },
   {
@@ -3105,6 +3244,7 @@
       "UNK",
       "SRB"
     ],
+    "area": 25713.0,
     "population": 2077132
   },
   {
@@ -3121,6 +3261,7 @@
     "cca3": "CXR",
     "region": "Oceania",
     "borders": [],
+    "area": 135.0,
     "population": 2072
   },
   {
@@ -3145,6 +3286,7 @@
       "RUS",
       "SVK"
     ],
+    "area": 603500.0,
     "population": 44134693
   },
   {
@@ -3166,6 +3308,7 @@
       "PSE",
       "SDN"
     ],
+    "area": 1002450.0,
     "population": 102334403
   },
   {
@@ -3194,6 +3337,7 @@
       "ETH",
       "SDN"
     ],
+    "area": 117600.0,
     "population": 5352000
   },
   {
@@ -3218,6 +3362,7 @@
     "cca3": "MNP",
     "region": "Oceania",
     "borders": [],
+    "area": 464.0,
     "population": 57557
   },
   {
@@ -3240,6 +3385,7 @@
       "RUS",
       "TUR"
     ],
+    "area": 86600.0,
     "population": 10110116
   },
   {
@@ -3264,6 +3410,7 @@
       "MLI",
       "NGA"
     ],
+    "area": 1267000.0,
     "population": 24206636
   },
   {
@@ -3280,6 +3427,7 @@
     "cca3": "LCA",
     "region": "Americas",
     "borders": [],
+    "area": 616.0,
     "population": 183629
   },
   {
@@ -3296,6 +3444,7 @@
     "cca3": "MSR",
     "region": "Americas",
     "borders": [],
+    "area": 102.0,
     "population": 4922
   },
   {
@@ -3312,6 +3461,7 @@
     "cca3": "VIR",
     "region": "Americas",
     "borders": [],
+    "area": 347.0,
     "population": 106290
   },
   {
@@ -3331,6 +3481,7 @@
       "GIN",
       "LBR"
     ],
+    "area": 71740.0,
     "population": 7976985
   },
   {
@@ -3355,6 +3506,7 @@
       "ETH",
       "SOM"
     ],
+    "area": 23200.0,
     "population": 988002
   },
   {
@@ -3377,6 +3529,7 @@
       "SRB",
       "SVN"
     ],
+    "area": 56594.0,
     "population": 4047200
   },
   {
@@ -3405,6 +3558,7 @@
       "SWE",
       "RUS"
     ],
+    "area": 323802.0,
     "population": 5379475
   },
   {
@@ -3421,6 +3575,7 @@
     "cca3": "DMA",
     "region": "Americas",
     "borders": [],
+    "area": 751.0,
     "population": 71991
   },
   {
@@ -3440,6 +3595,7 @@
       "ARG",
       "BRA"
     ],
+    "area": 181034.0,
     "population": 3473727
   },
   {
@@ -3458,6 +3614,7 @@
     "borders": [
       "SEN"
     ],
+    "area": 10689.0,
     "population": 2416664
   },
   {
@@ -3477,6 +3634,7 @@
       "ROU",
       "UKR"
     ],
+    "area": 33846.0,
     "population": 2617820
   },
   {
@@ -3508,6 +3666,7 @@
       "TJK",
       "CHN"
     ],
+    "area": 652230.0,
     "population": 40218234
   },
   {
@@ -3526,6 +3685,7 @@
     "borders": [
       "ESP"
     ],
+    "area": 92090.0,
     "population": 10305564
   },
   {
@@ -3548,6 +3708,7 @@
       "UNK",
       "SRB"
     ],
+    "area": 13812.0,
     "population": 621718
   },
   {
@@ -3566,6 +3727,7 @@
     "borders": [
       "MYS"
     ],
+    "area": 5765.0,
     "population": 437483
   },
   {
@@ -3590,6 +3752,7 @@
     "cca3": "FJI",
     "region": "Oceania",
     "borders": [],
+    "area": 18272.0,
     "population": 896444
   },
   {
@@ -3610,6 +3773,7 @@
       "GTM",
       "USA"
     ],
+    "area": 1964375.0,
     "population": 128932753
   },
   {
@@ -3644,6 +3808,7 @@
       "LIE",
       "DEU"
     ],
+    "area": 41284.0,
     "population": 8654622
   },
   {
@@ -3673,6 +3838,7 @@
       "TZA",
       "UGA"
     ],
+    "area": 26338.0,
     "population": 12952209
   },
   {
@@ -3693,6 +3859,7 @@
     "cca3": "CYP",
     "region": "Europe",
     "borders": [],
+    "area": 9251.0,
     "population": 1207361
   },
   {
@@ -3709,6 +3876,7 @@
     "cca3": "BMU",
     "region": "Americas",
     "borders": [],
+    "area": 54.0,
     "population": 63903
   },
   {
@@ -3725,6 +3893,7 @@
     "cca3": "TWN",
     "region": "Asia",
     "borders": [],
+    "area": 36193.0,
     "population": 23503349
   },
   {
@@ -3741,6 +3910,7 @@
     "cca3": "JPN",
     "region": "Asia",
     "borders": [],
+    "area": 377930.0,
     "population": 125836021
   },
   {
@@ -3759,6 +3929,7 @@
     "borders": [
       "SAU"
     ],
+    "area": 11586.0,
     "population": 2881060
   },
   {
@@ -3777,6 +3948,7 @@
     "borders": [
       "DEU"
     ],
+    "area": 43094.0,
     "population": 5831404
   },
   {
@@ -3793,6 +3965,7 @@
     "cca3": "CCK",
     "region": "Oceania",
     "borders": [],
+    "area": 14.0,
     "population": 544
   },
   {
@@ -3809,6 +3982,7 @@
     "cca3": "BVT",
     "region": "Antarctic",
     "borders": [],
+    "area": 49.0,
     "population": 0
   },
   {
@@ -3834,6 +4008,7 @@
       "ZMB",
       "ZWE"
     ],
+    "area": 582000.0,
     "population": 2351625
   },
   {
@@ -3852,6 +4027,7 @@
     "borders": [
       "FRA"
     ],
+    "area": 2.02,
     "population": 39244
   },
   {
@@ -3875,6 +4051,7 @@
       "ISR",
       "SYR"
     ],
+    "area": 10452.0,
     "population": 6825442
   },
   {
@@ -3898,6 +4075,7 @@
       "SDN",
       "TUN"
     ],
+    "area": 1759540.0,
     "population": 6871287
   },
   {
@@ -3922,6 +4100,7 @@
       "IDN",
       "THA"
     ],
+    "area": 330803.0,
     "population": 32365998
   },
   {
@@ -3944,6 +4123,7 @@
     "borders": [
       "ITA"
     ],
+    "area": 0.44,
     "population": 451
   },
   {
@@ -3963,6 +4143,7 @@
       "NIC",
       "PAN"
     ],
+    "area": 51100.0,
     "population": 5094114
   },
   {
@@ -3985,6 +4166,7 @@
       "PRT",
       "MAR"
     ],
+    "area": 505992.0,
     "population": 47351567
   },
   {
@@ -4001,6 +4183,7 @@
     "cca3": "MTQ",
     "region": "Americas",
     "borders": [],
+    "area": 1128.0,
     "population": 378243
   },
   {
@@ -4023,6 +4206,7 @@
       "POL",
       "UKR"
     ],
+    "area": 49037.0,
     "population": 5458827
   },
   {
@@ -4051,6 +4235,7 @@
       "MNE",
       "SRB"
     ],
+    "area": 51209.0,
     "population": 3280815
   },
   {
@@ -4075,6 +4260,7 @@
       "RWA",
       "TZA"
     ],
+    "area": 27834.0,
     "population": 11890781
   },
   {
@@ -4091,6 +4277,7 @@
     "cca3": "CPV",
     "region": "Africa",
     "borders": [],
+    "area": 4033.0,
     "population": 555988
   },
   {
@@ -4111,6 +4298,7 @@
       "ARE",
       "YEM"
     ],
+    "area": 309500.0,
     "population": 5106622
   },
   {
@@ -4137,6 +4325,7 @@
       "RUS",
       "UKR"
     ],
+    "area": 207600.0,
     "population": 9398861
   },
   {
@@ -4155,6 +4344,7 @@
     "borders": [
       "SXM"
     ],
+    "area": 53.0,
     "population": 38659
   },
   {
@@ -4171,6 +4361,7 @@
     "cca3": "BRB",
     "region": "Americas",
     "borders": [],
+    "area": 430.0,
     "population": 287371
   },
   {
@@ -4196,6 +4387,7 @@
       "MNE",
       "SRB"
     ],
+    "area": 10908.0,
     "population": 1775378
   },
   {
@@ -4225,6 +4417,7 @@
       "UGA",
       "ZMB"
     ],
+    "area": 945087.0,
     "population": 59734213
   },
   {
@@ -4245,6 +4438,7 @@
     "cca3": "WSM",
     "region": "Oceania",
     "borders": [],
+    "area": 2842.0,
     "population": 198410
   },
   {
@@ -4268,6 +4462,7 @@
       "SSD",
       "SDN"
     ],
+    "area": 1104300.0,
     "population": 114963583
   },
   {
@@ -4299,6 +4494,7 @@
       "NPL",
       "PAK"
     ],
+    "area": 3287590.0,
     "population": 1380004385
   },
   {
@@ -4318,6 +4514,7 @@
       "LVA",
       "RUS"
     ],
+    "area": 45227.0,
     "population": 1331057
   },
   {
@@ -4340,6 +4537,7 @@
     "borders": [
       "GBR"
     ],
+    "area": 70273.0,
     "population": 4994724
   },
   {
@@ -4356,6 +4554,7 @@
     "cca3": "MDV",
     "region": "Asia",
     "borders": [],
+    "area": 300.0,
     "population": 540542
   },
   {
@@ -4380,6 +4579,7 @@
     "cca3": "SYC",
     "region": "Africa",
     "borders": [],
+    "area": 452.0,
     "population": 98462
   },
   {
@@ -4406,6 +4606,7 @@
       "SSD",
       "TZA"
     ],
+    "area": 241550.0,
     "population": 45741000
   },
   {
@@ -4422,6 +4623,7 @@
     "cca3": "FLK",
     "region": "Americas",
     "borders": [],
+    "area": 12173.0,
     "population": 2563
   },
   {
@@ -4438,6 +4640,7 @@
     "cca3": "STP",
     "region": "Africa",
     "borders": [],
+    "area": 964.0,
     "population": 219161
   },
   {
@@ -4458,6 +4661,7 @@
     "cca3": "NIU",
     "region": "Oceania",
     "borders": [],
+    "area": 260.0,
     "population": 1470
   },
   {
@@ -4480,6 +4684,7 @@
     "borders": [
       "IDN"
     ],
+    "area": 14874.0,
     "population": 1318442
   },
   {
@@ -4511,6 +4716,7 @@
       "SYR",
       "TUR"
     ],
+    "area": 438317.0,
     "population": 40222503
   },
   {
@@ -4527,6 +4733,7 @@
     "cca3": "KNA",
     "region": "Americas",
     "borders": [],
+    "area": 261.0,
     "population": 53192
   },
   {
@@ -4551,6 +4758,7 @@
     "cca3": "CUW",
     "region": "Americas",
     "borders": [],
+    "area": 444.0,
     "population": 155014
   },
   {
@@ -4571,6 +4779,7 @@
     "cca3": "NFK",
     "region": "Oceania",
     "borders": [],
+    "area": 36.0,
     "population": 2302
   },
   {
@@ -4591,6 +4800,7 @@
     "cca3": "MHL",
     "region": "Oceania",
     "borders": [],
+    "area": 181.0,
     "population": 59194
   },
   {
@@ -4615,6 +4825,7 @@
       "NER",
       "SEN"
     ],
+    "area": 1240192.0,
     "population": 20250834
   },
   {
@@ -4638,6 +4849,7 @@
       "GIN",
       "SEN"
     ],
+    "area": 36125.0,
     "population": 1967998
   },
   {
@@ -4654,6 +4866,7 @@
     "cca3": "MYT",
     "region": "Africa",
     "borders": [],
+    "area": 374.0,
     "population": 226915
   },
   {
@@ -4678,6 +4891,7 @@
       "SVK",
       "UKR"
     ],
+    "area": 312679.0,
     "population": 37950802
   },
   {
@@ -4703,6 +4917,7 @@
       "KGZ",
       "UZB"
     ],
+    "area": 143100.0,
     "population": 9537642
   },
   {
@@ -4721,6 +4936,7 @@
     "borders": [
       "IRL"
     ],
+    "area": 242900.0,
     "population": 67215293
   },
   {
@@ -4747,6 +4963,7 @@
       "TZA",
       "UGA"
     ],
+    "area": 580367.0,
     "population": 53771300
   },
   {
@@ -4773,6 +4990,7 @@
       "TKM",
       "UZB"
     ],
+    "area": 2724900.0,
     "population": 18754440
   },
   {
@@ -4792,6 +5010,7 @@
       "COL",
       "CRI"
     ],
+    "area": 75417.0,
     "population": 4314768
   },
   {
@@ -4820,6 +5039,7 @@
     "cca3": "SGP",
     "region": "Asia",
     "borders": [],
+    "area": 710.0,
     "population": 5685807
   },
   {
@@ -4841,6 +5061,7 @@
       "TCD",
       "NER"
     ],
+    "area": 923768.0,
     "population": 206139587
   },
   {
@@ -4863,6 +5084,7 @@
       "SRB",
       "UKR"
     ],
+    "area": 238391.0,
     "population": 19286123
   },
   {
@@ -4879,6 +5101,7 @@
     "cca3": "ATG",
     "region": "Americas",
     "borders": [],
+    "area": 442.0,
     "population": 97928
   },
   {
@@ -4904,6 +5127,7 @@
       "POL",
       "SVK"
     ],
+    "area": 78865.0,
     "population": 10698896
   },
   {
@@ -4925,6 +5149,7 @@
       "IRN",
       "TUR"
     ],
+    "area": 29743.0,
     "population": 2963234
   },
   {
@@ -4945,6 +5170,7 @@
       "COL",
       "GUY"
     ],
+    "area": 916445.0,
     "population": 28435943
   },
   {
@@ -4965,6 +5191,7 @@
     "cca3": "PHL",
     "region": "Asia",
     "borders": [],
+    "area": 342353.0,
     "population": 109581085
   },
   {
@@ -4981,6 +5208,7 @@
     "cca3": "WLF",
     "region": "Oceania",
     "borders": [],
+    "area": 142.0,
     "population": 11750
   },
   {
@@ -5007,6 +5235,7 @@
       "POL",
       "CHE"
     ],
+    "area": 357114.0,
     "population": 83240525
   },
   {
@@ -5037,6 +5266,7 @@
       "COL",
       "ECU"
     ],
+    "area": 1285216.0,
     "population": 32971846
   },
   {
@@ -5064,6 +5294,7 @@
       "GAB",
       "NGA"
     ],
+    "area": 475442.0,
     "population": 26545864
   },
   {
@@ -5080,6 +5311,7 @@
     "cca3": "IOT",
     "region": "Africa",
     "borders": [],
+    "area": 60.0,
     "population": 3000
   },
   {
@@ -5098,6 +5330,7 @@
     "borders": [
       "PRK"
     ],
+    "area": 100210.0,
     "population": 51780579
   },
   {
@@ -5114,6 +5347,7 @@
     "cca3": "SPM",
     "region": "Americas",
     "borders": [],
+    "area": 242.0,
     "population": 6069
   },
   {
@@ -5134,6 +5368,7 @@
       "COG",
       "GNQ"
     ],
+    "area": 267668.0,
     "population": 2225728
   },
   {
@@ -5152,6 +5387,7 @@
     "borders": [
       "HTI"
     ],
+    "area": 48671.0,
     "population": 10847904
   },
   {
@@ -5173,6 +5409,7 @@
       "LTU",
       "RUS"
     ],
+    "area": 64559.0,
     "population": 1901548
   },
   {
@@ -5197,6 +5434,7 @@
       "TUR",
       "TKM"
     ],
+    "area": 1648195.0,
     "population": 83992953
   },
   {
@@ -5213,6 +5451,7 @@
     "cca3": "CUB",
     "region": "Americas",
     "borders": [],
+    "area": 109884.0,
     "population": 11326616
   },
   {
@@ -5237,6 +5476,7 @@
       "ARE",
       "YEM"
     ],
+    "area": 2149690.0,
     "population": 34813867
   },
   {
@@ -5258,6 +5498,7 @@
       "RUS",
       "TUR"
     ],
+    "area": 69700.0,
     "population": 3714000
   },
   {
@@ -5283,6 +5524,7 @@
       "IND",
       "IRN"
     ],
+    "area": 881912.0,
     "population": 220892331
   },
   {
@@ -5312,6 +5554,7 @@
       "LUX",
       "NLD"
     ],
+    "area": 30528.0,
     "population": 11555997
   },
   {
@@ -5328,6 +5571,7 @@
     "cca3": "SGS",
     "region": "Antarctic",
     "borders": [],
+    "area": 3903.0,
     "population": 30
   },
   {
@@ -5347,6 +5591,7 @@
       "DZA",
       "LBY"
     ],
+    "area": 163610.0,
     "population": 11818618
   },
   {
@@ -5366,6 +5611,7 @@
       "BEL",
       "DEU"
     ],
+    "area": 41850.0,
     "population": 16655799
   },
   {
@@ -5389,6 +5635,7 @@
       "NER",
       "TGO"
     ],
+    "area": 272967.0,
     "population": 20903278
   },
   {
@@ -5409,6 +5656,7 @@
       "MYS",
       "PNG"
     ],
+    "area": 1904569.0,
     "population": 273523621
   },
   {
@@ -5434,6 +5682,7 @@
       "SVN",
       "CHE"
     ],
+    "area": 83871.0,
     "population": 8917205
   },
   {
@@ -5450,6 +5699,7 @@
     "cca3": "GRD",
     "region": "Americas",
     "borders": [],
+    "area": 344.0,
     "population": 112519
   }
 ]
